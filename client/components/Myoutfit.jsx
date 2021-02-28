@@ -1,16 +1,16 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
 import axios from "axios";
-import Cardoutfit from "./Cardoutfit.jsx"
+import Cardoutfit from "./Cardoutfit.jsx";
+import data from "./data.json";
 
 export default class Myoutfit extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-    
-    };
+    this.state={
+      data:[]
+    }
   }
-
 
   render() {
     const breakPoints = [
@@ -22,9 +22,9 @@ export default class Myoutfit extends React.Component {
 
     return (
       <Carousel breakPoints={breakPoints}>
-        
-         <Cardoutfit/>
-        
+        {data.map((outfit, index) => {
+          return <Cardoutfit outfit={outfit} key={index}/>
+        })}
       </Carousel>
     );
   }

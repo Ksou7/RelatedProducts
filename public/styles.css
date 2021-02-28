@@ -61,3 +61,13 @@ body{
   .card-star:hover {
     color: orange;
   }
+
+  .remove{
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 230px;
+
+  }
+  .remove:hover{
+    color:red
+  }
