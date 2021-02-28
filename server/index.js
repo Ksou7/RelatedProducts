@@ -11,22 +11,6 @@ const { send } = require("process");
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
 
-// app.get("/api/products",async(req,res)=>{
-//   try{
-//   const data = await axios.get('https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products',{
-//      headers :{
-//       Authorization :"a1e8950a9d8167991fdded95527d06ae0af76d54",
-//   }
-// })
-// console.log(data.data)
-// res.send(data.data)
-
-//    }catch(err){
-//    console.error(err)
-
-//  }
-
-// })
 
 app.get("/api/products/:product_id", async (req, res) => {
   var data = [];

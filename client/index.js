@@ -1,8 +1,20 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import Product from './components/Product.jsx';
 import Related from "./components/Related.jsx"
+import Myoutfit from './components/Myoutfit.jsx'
 // window.Product = Product;
 
 
-ReactDOM.render(<Related/>,document.getElementById("app"))
+export default class App extends React.Component {
+    
+    render() {
+        return (
+            <div>
+                <Related/>
+                <Myoutfit/>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<App/>,document.getElementById("app"))
