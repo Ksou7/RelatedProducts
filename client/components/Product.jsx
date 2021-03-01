@@ -19,15 +19,13 @@ export default class Product extends Component {
 
 
   render() {
-
-
-
     return (
+      <div>
+      {!this.state.comparison ? (<div></div>) : <Modalcomparison relatedProd={this.props.product}/> }
       <div className="card-product">
         <div>
-        {!this.state.comparison ? (<div></div>) : <Modalcomparison /> }
-  
-        <span className="far fa-star card-star-top" onClick = {this.CompClick.bind(this)}  ></span>
+          
+      <span className="far fa-star card-star-top" onClick = {this.CompClick.bind(this)}  ></span>
           <img className="card-image" src={this.props.product.url.url}></img>
         </div>
         <div className="card-category">
@@ -44,6 +42,7 @@ export default class Product extends Component {
           <i className="far fa-star card-star"></i>
           <i className="far fa-star card-star"></i>
         </div>
+      </div>
       </div>
     );
   }
