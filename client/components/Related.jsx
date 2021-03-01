@@ -35,10 +35,11 @@ export default class Related extends React.Component {
     ];
 
     return (
+      
     
       <Carousel breakPoints={breakPoints}>
         {this.state.data.map((product, index) => {
-          return <Product product={product} key={index} />;
+          return <Product    product={product} key={index} />;
         })}
       </Carousel>
      

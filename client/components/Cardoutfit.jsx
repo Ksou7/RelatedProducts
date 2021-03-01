@@ -33,6 +33,7 @@ export default class Carddata extends React.Component {
             <i className="far fa-star card-star"></i>
           </div>
         </div>
+      
       </div>
     );
   }

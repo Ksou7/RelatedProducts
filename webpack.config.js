@@ -5,14 +5,19 @@ module.exports = {
   context: __dirname + '/client',
   entry: './index.js',
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['react', 'es2015', 'env']
+        use: {
+          loader: "babel-loader",
+          options: {
+            cacheDirectory: true,
+            cacheCompression: false,
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
         },
+              
       },
     ],
   },

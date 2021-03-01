@@ -2,7 +2,7 @@ import React from "react";
 import Carousel from "react-elastic-carousel";
 import axios from "axios";
 import Cardoutfit from "./Cardoutfit.jsx";
-import data from "./data.json";
+import data from "../data.json";
 
 export default class Myoutfit extends React.Component {
   constructor(props) {
