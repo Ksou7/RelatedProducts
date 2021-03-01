@@ -3,6 +3,7 @@ import Carousel from "react-elastic-carousel";
 import axios from "axios";
 import Product from "./Product.jsx";
 import Myoutfit from "./Myoutfit.jsx"
+import Modalcomparison from"./Modalcomparison.jsx"
 
 export default class Related extends React.Component {
   constructor(props) {
@@ -36,9 +37,11 @@ export default class Related extends React.Component {
 
     return (
     
+    
       <Carousel breakPoints={breakPoints}>
         {this.state.data.map((product, index) => {
-          return <Product product={product} key={index} />;
+          return <Product product={product} key={index}  />;
+          
         })}
       </Carousel>
      

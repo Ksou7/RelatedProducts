@@ -1,20 +1,26 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import Related from "./components/Related.jsx"
-import Myoutfit from './components/Myoutfit.jsx'
+import React from "react";
+import ReactDOM from "react-dom";
+import Related from "./components/Related.jsx";
+import Myoutfit from "./components/Myoutfit.jsx";
+
 // window.Product = Product;
 
-
 export default class App extends React.Component {
-    
-    render() {
-        return (
-            <div>
-                <Related/>
-                <Myoutfit/>
-            </div>
-        )
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      showModal: false,
+    };
+  }
+
+  render() {
+    return (
+      <div>
+        <Related />
+        <Myoutfit />
+      </div>
+    );
+  }
 }
 
-ReactDOM.render(<App/>,document.getElementById("app"))
+ReactDOM.render(<App />, document.getElementById("app"));
