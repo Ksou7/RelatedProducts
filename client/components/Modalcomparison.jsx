@@ -19,7 +19,7 @@ export default class Modalcomparison extends React.Component {
 
   render() {
     return (
-      <div style={{display:  'block'}}>
+      <div >
         <table>
           <tr>
             <th>Product short Name</th>

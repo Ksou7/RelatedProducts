@@ -19,7 +19,7 @@ export default class Product extends Component {
 
 
   render() {
-  // let Modal = this.state.comparison === false ? (<div></div>) : (<Modalcomparison />)
+
 
 
     return (
@@ -27,7 +27,7 @@ export default class Product extends Component {
         <div>
         {!this.state.comparison ? (<div></div>) : <Modalcomparison /> }
   
-        {/* <span className="far fa-star card-star-top" onClick = {this.CompClick.bind(this)} display={{ xs: 'none', sm: 'block' }} ></span> */}
+        <span className="far fa-star card-star-top" onClick = {this.CompClick.bind(this)}  ></span>
           <img className="card-image" src={this.props.product.url.url}></img>
         </div>
         <div className="card-category">
