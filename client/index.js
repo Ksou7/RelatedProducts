@@ -1,3 +1,20 @@
-import NameOfTheService from './components/NameOfTheService.jsx';
+import React from "react"
+import ReactDOM from "react-dom"
+import Related from "./components/Related.jsx"
+import Myoutfit from './components/Myoutfit.jsx'
+// window.Product = Product;
 
-window.NameOfTheService = NameOfTheService;
+
+export default class App extends React.Component {
+    
+    render() {
+        return (
+            <div>
+                <Related/>
+                <Myoutfit/>
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<App/>,document.getElementById("app"))
