@@ -2,7 +2,7 @@ import React from "react";
 
 
 
-export default class Carddata extends React.Component {
+export default class Cardproduct extends React.Component {
   constructor(props) {
     super(props);
   }

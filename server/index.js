@@ -64,6 +64,30 @@ app.get("/api/products/:product_id", async (req, res) => {
   res.send(data);
 });
 
+
+// Get Rating
+
+
+app.get("/reviews", async (req, res) => {
+  var rating =[]
+  await axios
+    .get(
+      `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews/${req.params.product_id}`,
+      {
+        headers: {
+          Authorization: process.env.TOKEN,
+        },
+        _id: req.params.product_id,
+      })
+   .then((product)=>{
+    res.send(product)
+    .catch((err) => ((console.log(err))
+   })
+  }
+
+
+
+
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
-});
+})
