@@ -18,9 +18,7 @@ export default class App extends React.Component {
       <div>
         <Related />
         <Myoutfit />
-       
-        </div>
-  
+      </div>
     );
   }
 }
