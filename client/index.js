@@ -8,11 +8,7 @@ import Myoutfit from "./components/Myoutfit.jsx";
 export default class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      showModal: false,
-    };
   }
-  
 
   render() {
     return (

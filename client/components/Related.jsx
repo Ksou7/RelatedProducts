@@ -14,13 +14,13 @@ export default class Related extends React.Component {
   }
   componentDidMount() {
     axios
-      .get(`/api/products/11006`)
+      .get(`/api/products/11050`)
       .then((response) => {
         console.log(response.data);
         this.setState({
           data: response.data,
         });
-        console.log(this.state);
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -37,7 +37,8 @@ export default class Related extends React.Component {
 
     return (
     
-    
+    <div>
+      <h1>RELATED PRODUCTS</h1>
       <Carousel breakPoints={breakPoints}>
         {this.state.data.map((product, index) => {
           return <Product product={product} key={index}  />;
@@ -45,8 +46,28 @@ export default class Related extends React.Component {
         })}
       </Carousel>
      
+  </div>
     );
   }
- 
 
 }
+
+// var result = []
+//     var ratingg = 0
+//     var counter = 0
+//     this.state.rating.map((el) => {
+//       if (el.results.length === 0) {
+//         result.push(0)
+//         ratingg = 0
+//         counter = 0
+//       }
+//       el.results.map((eel, i) => {
+//         ratingg += eel.rating
+//         counter += 1
+//         if (counter === 5) {
+//           result.push(ratingg)
+//           ratingg = 0
+//           counter = 0
+//         }
+//       })
+//     })

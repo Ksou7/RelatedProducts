@@ -81,14 +81,16 @@ body {
 .comparison-modal {
   position: fixed;
   right: 20%;
-  margin-top: 5%;
+  margin-top: 2%;
 
   width: 30%;
   height: 50%;
   overflow: auto;
-  background-color: white;
-  padding: 50px;
+  background-color:white;
+  
   border: 20px;
+  text-align: center;
+  padding: 10px;
 }
 .left {
   margin-bottom: 17px;
@@ -96,8 +98,4 @@ body {
 .right {
   margin-left: 300%;
   top: 150%;
-}
-.pshortn {
-  float: right;
- 
 }

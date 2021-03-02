@@ -15,7 +15,6 @@ export default class Product extends Component {
     this.setState({
       comparison: true,
     });
-    console.log("clicked");
   }
 
   render() {
@@ -26,11 +25,11 @@ export default class Product extends Component {
         ) : (
           <Modalcomparison relatedProd={this.props.product} />
         )}
-        <div className="card-product">
+        <div className="card-product" onClick={this.CompClick.bind(this)}>
           <div>
             <span
               className="far fa-star card-star-top"
-              onClick={this.CompClick.bind(this)}
+            
             ></span>
             <img className="card-image" src={this.props.product.url.url}></img>
           </div>
@@ -43,7 +42,7 @@ export default class Product extends Component {
           </span>
           <br />
           <br />
-          <Rating />
+          <Rating rating={this.props.product}/>
         </div>
       </div>
     );

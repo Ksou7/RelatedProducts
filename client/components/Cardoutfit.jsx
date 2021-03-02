@@ -1,4 +1,5 @@
 import React from "react";
+import Rating from './Rating.jsx'
 
 
 
@@ -25,13 +26,7 @@ export default class Cardproduct extends React.Component {
           </span>
           <br />
           <br />
-          <div className="card-star-rating">
-            <i className="far fa-star card-star"></i>
-            <i className="far fa-star card-star"></i>
-            <i className="far fa-star card-star"></i>
-            <i className="far fa-star card-star"></i>
-            <i className="far fa-star card-star"></i>
-          </div>
+         <Rating/>
         </div>
       
       </div>
