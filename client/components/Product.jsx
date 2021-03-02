@@ -37,17 +37,10 @@ export default class Product extends Component {
         <span className="card-price">${this.props.product.default_price}</span>
         <br />
         <br />
-     
+        <Rating/>
       </div>
-  
+      
       </div>
     );
   }
 }
- {/* <div className="card-star-rating">
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-        </div> */}
