@@ -25,7 +25,7 @@ app.get("/api/products/:product_id", async (req, res) => {
       }
     )
     .then(async (related) => {
-      //loop to get the related
+      //loop to get each product
       for (var i = 0; i < related.data.length; i++) {
         await axios
           .get(
@@ -49,8 +49,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             }
           )
           .then((style) => {
-            // console.log(style);
-            // console.log(style.data.results[0].photos[0]);
+           
             if (style.data.results[0].photos) {
               data[i].url = style.data.results[0].photos[0];
             }
@@ -59,15 +58,14 @@ app.get("/api/products/:product_id", async (req, res) => {
     })
     .catch((err) => console.log(err));
 
-  console.log(data);
+  
   res.send(data);
 });
 
 //this Get request to fetch  Rating data
 
 app.get("/reviews/:product_id", async (req, res) => {
-  var related = [];
-  console.log("id===>", req.params.product_id);
+  var related = []
   await axios
     .get(
       `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${req.params.product_id}/related`,
@@ -80,7 +78,6 @@ app.get("/reviews/:product_id", async (req, res) => {
     )
     .then(async (product) => {
       for (var i = 0; i < product.data.length; i++) {
-        console.log("i============================>", product.data[i]);
         await axios
           .get(
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=${product.data[i]}`,
@@ -92,12 +89,11 @@ app.get("/reviews/:product_id", async (req, res) => {
           )
           .then((result) => {
             console.log(result.data);
-            // related.push(result);
           });
       }
     })
     .catch((err) => {
-      console.log(err);
+      res.send(err);
     });
   res.send(related);
 });
