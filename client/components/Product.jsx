@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Modalcomparison from "./Modalcomparison.jsx";
+import StarRatings from "react-star-ratings";
 import Rating from "./Rating.jsx";
-
+import StarRatings from "react-star-ratings";
 export default class Product extends Component {
   constructor(props) {
     super(props);
@@ -18,12 +19,13 @@ export default class Product extends Component {
   }
 
   render() {
+    console.log( "==========>" ,this.props.rates);
     return (
       <div>
         {!this.state.comparison ? (
           <div></div>
         ) : (
-          <Modalcomparison relatedProd={this.props.product} />
+          <Modalcomparison comparisonproduct={this.props.product} />
         )}
         <div className="card-product" onClick={this.CompClick.bind(this)}>
           <div>
@@ -40,9 +42,19 @@ export default class Product extends Component {
           <span className="card-price">
             ${this.props.product.default_price}
           </span>
-          <br />
-          <br />
-          <Rating rating={this.props.product} /> 
+          
+         
+        
+          <span>
+          <StarRatings
+          rating={(this.props.rates)/5}
+          starRatedColor="orange"
+          starDimension="15px"
+          starSpacing="1px"
+          numberOfStars={5}
+          name="rating"
+        />
+        </span>
         </div>
       </div>
     );

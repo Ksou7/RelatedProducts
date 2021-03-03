@@ -11,7 +11,7 @@ const { json } = require("express");
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
-
+// var token = process.env.TOKEN;
 //this get request for products
 app.get("/api/products/:product_id", async (req, res) => {
   var data = [];
@@ -20,7 +20,7 @@ app.get("/api/products/:product_id", async (req, res) => {
       `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${req.params.product_id}/related`,
       {
         headers: {
-          Authorization: process.env.TOKEN,
+          Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
         },
         _id: req.params.product_id,
       }
@@ -33,7 +33,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}`,
             {
               headers: {
-                Authorization: process.env.TOKEN,
+                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
               },
             }
           )
@@ -47,7 +47,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}/styles`,
             {
               headers: {
-                Authorization: process.env.TOKEN,
+                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
               },
             }
           )
@@ -63,7 +63,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=${related.data[i]}`,
             {
               headers: {
-                Authorization: process.env.TOKEN,
+                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
               },
               _id: req.params.product_id,
             }
@@ -71,8 +71,8 @@ app.get("/api/products/:product_id", async (req, res) => {
           .then(async (reviews) => {
             console.log(reviews.data);
             if (reviews.data.results) {
-              console.log("da5let");
               data[i].rating = reviews.data.results;
+              console.log(data[i].rating)
             }
           })
           .catch((err) => {
@@ -88,3 +88,5 @@ app.get("/api/products/:product_id", async (req, res) => {
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
+
+

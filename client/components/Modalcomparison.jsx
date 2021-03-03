@@ -5,6 +5,10 @@ export default class Modalcomparison extends React.Component {
     super(props);
   }
 
+
+componentDidMount(){}
+
+  
   render() {
     return (
       <div className="comparison-modal">
