@@ -9,23 +9,31 @@ export default class Related extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: [],
+      data: []
     };
+  
   }
-  componentDidMount() {
-    axios
-      .get(`/api/products/11050`)
-      .then((response) => {
-        console.log(response.data);
-        this.setState({
-          data: response.data,
-        });
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
+ 
+componentDidMount(){
+  
+     axios
+    .get(`/api/products/11005`)
+    .then((response) => {
+  
+      var data = response.data
+      this.setState({
+        data: data
       });
-  }
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  
+  
+  // console.log(this.state.data);
+}
+
 
   render() {
     const breakPoints = [

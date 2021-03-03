@@ -7,9 +7,7 @@ import data from "../data.json";
 export default class Myoutfit extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      data:[]
-    }
+   
   }
 
   render() {

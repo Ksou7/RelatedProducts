@@ -3,7 +3,6 @@ import React from "react";
 export default class Modalcomparison extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   render() {
@@ -13,8 +12,8 @@ export default class Modalcomparison extends React.Component {
           <thead>
             <tr>
               <th>Product short Name</th>
-
-              <th className="pshortn">Product short Name</th>
+              <th> </th>
+              <th>Product short Name</th>
             </tr>
           </thead>
           <tbody>

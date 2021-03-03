@@ -42,7 +42,7 @@ export default class Product extends Component {
           </span>
           <br />
           <br />
-          <Rating rating={this.props.product}/>
+          <Rating rating={this.props.product} /> 
         </div>
       </div>
     );

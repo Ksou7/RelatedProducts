@@ -12,7 +12,7 @@ const { json } = require("express");
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
 
-//this get request for the product11005
+//this get request for products
 app.get("/api/products/:product_id", async (req, res) => {
   var data = [];
   await axios
@@ -38,7 +38,6 @@ app.get("/api/products/:product_id", async (req, res) => {
             }
           )
           .then((product) => {
-            console.log("axios each  related");
             data.push(product.data);
           })
           .catch((err) => console.log(err));
@@ -53,7 +52,6 @@ app.get("/api/products/:product_id", async (req, res) => {
             }
           )
           .then((style) => {
-            console.log("axios styles");
             if (style.data.results[0].photos) {
               data[i].url = style.data.results[0].photos[0];
             }
@@ -72,8 +70,9 @@ app.get("/api/products/:product_id", async (req, res) => {
           )
           .then(async (reviews) => {
             console.log(reviews.data);
-            if (reviews.data.rating) {
-              data[i].rating = reviews.data[i].rating;
+            if (reviews.data.results) {
+              console.log("da5let");
+              data[i].rating = reviews.data.results;
             }
           })
           .catch((err) => {
