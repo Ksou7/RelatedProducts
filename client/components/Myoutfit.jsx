@@ -7,9 +7,7 @@ import data from "../data.json";
 export default class Myoutfit extends React.Component {
   constructor(props) {
     super(props);
-    this.state={
-      data:[]
-    }
+   
   }
 
   render() {
@@ -21,11 +19,14 @@ export default class Myoutfit extends React.Component {
     ];
 
     return (
+      <div>
+        <h1>YOUR OUTFIT</h1>
       <Carousel breakPoints={breakPoints}>
         {data.map((outfit, index) => {
           return <Cardoutfit outfit={outfit} key={index}/>
         })}
       </Carousel>
+      </div>
     );
   }
 }

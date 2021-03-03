@@ -1,48 +1,61 @@
 import React, { Component } from "react";
-import Modalcomparison from './Modalcomparison.jsx'
-
+import Modalcomparison from "./Modalcomparison.jsx";
+import StarRatings from "react-star-ratings";
+import Rating from "./Rating.jsx";
+import StarRatings from "react-star-ratings";
 export default class Product extends Component {
   constructor(props) {
     super(props);
-   
-    this.state= {
-      comparison: false
-    }
+
+    this.state = {
+      comparison: false,
+    };
   }
 
   CompClick() {
     this.setState({
-      comparison:true
-    })
-    console.log("clicked");
+      comparison: true,
+    });
   }
 
-
   render() {
+    console.log( "==========>" ,this.props.rates);
     return (
       <div>
-      {!this.state.comparison ? (<div></div>) : <Modalcomparison relatedProd={this.props.product}/> }
-      <div className="card-product">
-        <div>
+        {!this.state.comparison ? (
+          <div></div>
+        ) : (
+          <Modalcomparison comparisonproduct={this.props.product} />
+        )}
+        <div className="card-product" onClick={this.CompClick.bind(this)}>
+          <div>
+            <span
+              className="far fa-star card-star-top"
+            
+            ></span>
+            <img className="card-image" src={this.props.product.url.url}></img>
+          </div>
+          <div className="card-category">
+            <a>{this.props.product.category}</a>
+          </div>
+          <div className="card-title">{this.props.product.name}</div>
+          <span className="card-price">
+            ${this.props.product.default_price}
+          </span>
           
-      <span className="far fa-star card-star-top" onClick = {this.CompClick.bind(this)}  ></span>
-          <img className="card-image" src={this.props.product.url.url}></img>
+         
+        
+          <span>
+          <StarRatings
+          rating={(this.props.rates)/5}
+          starRatedColor="orange"
+          starDimension="15px"
+          starSpacing="1px"
+          numberOfStars={5}
+          name="rating"
+        />
+        </span>
         </div>
-        <div className="card-category">
-          <a>{this.props.product.category}</a>
-        </div>
-        <div className="card-title">{this.props.product.name}</div>
-        <span className="card-price">${this.props.product.default_price}</span>
-        <br />
-        <br />
-        <div className="card-star-rating">
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-          <i className="far fa-star card-star"></i>
-        </div>
-      </div>
       </div>
     );
   }

@@ -6,6 +6,8 @@ npm
 npm-debug.log
 node_modules/
 
+.env
+
 pids
 *.pid
 logs
@@ -27,4 +29,4 @@ dist/
 # Your bundled files from your services
 public/app.js
 
-.env
+/.env
