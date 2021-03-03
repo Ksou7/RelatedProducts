@@ -15,7 +15,7 @@ componentDidMount(){}
         <table>
           <thead>
             <tr>
-              <th>Product short Name</th>
+              <th></th>
               <th> </th>
               <th>Product short Name</th>
             </tr>

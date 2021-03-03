@@ -74,9 +74,6 @@ body {
   color: gray;
 }
 
-.fa-remove {
-  color: red;
-}
 
 .comparison-modal {
   position: fixed;
@@ -91,13 +88,6 @@ body {
   border: 20px;
   text-align: center;
   padding: 10px;
-}
-.left {
-  margin-bottom: 17px;
-}
-.right {
-  margin-left: 300%;
-  top: 150%;
 }
 
 th{

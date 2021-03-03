@@ -1,6 +1,6 @@
 import React from "react";
 // import Rating from './Rating.jsx'
-
+import StarRatings from "react-star-ratings";
 
 
 export default class Cardproduct extends React.Component {
@@ -18,17 +18,31 @@ export default class Cardproduct extends React.Component {
             <img className="card-image" src={this.props.outfit.image}></img>
           </div>
           <div className="card-category">
-            <a></a>
+            <a> {this.props.outfit.category}</a>
           </div>
-          <div className="card-title"></div>
+          <div className="card-title">
+          {this.props.outfit.name}
+          
           <span className="card-price">
+        
+          <br />
          ${this.props.outfit.price}
+          <br />
           </span>
-          <br />
-          <br />
+          <span>
+          <StarRatings
+          rating={(5)}
+          starRatedColor="orange"
+          starDimension="15px"
+          starSpacing="1px"
+          numberOfStars={5}
+          name="rating"
+        />
+        </span>
+         </div>
         
         </div>
-      
+       
       </div>
     );
   }

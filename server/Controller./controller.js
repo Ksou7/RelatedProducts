@@ -1,30 +1,7 @@
-const express = require("express");
-const morgan = require("morgan");
-const path = require("path");
-const app = express();
-const port = process.env.PORT || 3001;
-const axios = require("axios");
-const bodyParser = require("body-parser");
-const env = require("dotenv").config();
-const router =require('./router/router.js')
+// const axios = require("axios");
+// var token = process.env.TOKEN;
 
-
-
-
-
-
-
-
-
-app.use(bodyParser.json());
-app.use(morgan("dev"));
-app.use(express.static(path.join(__dirname, "../public")));
-
-
-// app.use(`/api/products/:product_id`,router)
-var token = process.env.TOKEN;
-//this get request for products
-// app.get("/api/products/:product_id", async (req, res) => {
+// module.exports.find = async function (req, res) {
 //   var data = [];
 //   try {
 //     const related = await axios.get(
@@ -80,19 +57,13 @@ var token = process.env.TOKEN;
 
 //       if (reviews.data.results) {
 //         data[i].rating = reviews.data.results;
-//         // console.log(data[i].rating);
+//         console.log(data[i].rating);
 //       }
 //       data.push(reviews);
 //     }
-//     console.log("dakhleetttttttttttttttt");
-//     console.log("111111111111111111111111111", data);
 //   } catch (error) {
 //     console.log(error);
+//     console.log(data);
 //   }
-//   console.log(data);
-//   res.json(data)
-// });
-
-app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
-});
+//   res.send(data);
+// };
