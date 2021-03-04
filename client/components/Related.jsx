@@ -1,31 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
 import Carousel from "react-elastic-carousel";
 import axios from "axios";
 import Product from "./Product.jsx";
-import Myoutfit from "./Myoutfit.jsx";
-import Modalcomparison from "./Modalcomparison.jsx";
+
 
 export default class Related extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: [],
-     
     };
   }
 
   async componentDidMount() {
     try {
-      const response = await axios.get(`http://68.183.77.18:3001/related/11005`);
+      const response = await axios.get("/api/products/11036");
       await this.setState({ data: response.data });
-    
     } catch (e) {
       console.log(e);
     }
   }
 
-
-  
   render() {
     const breakPoints = [
       { width: 1, itemsToShow: 1 },
@@ -38,7 +33,6 @@ export default class Related extends React.Component {
     var counter = 0;
     this.state.data.map((element) => {
       if (element.rating.length === 0) {
-        
         result.push(0);
         ratings = 0;
         counter = 0;
@@ -47,15 +41,14 @@ export default class Related extends React.Component {
         ratings += element.rating;
         counter += 1;
         if (counter === 5) {
-          result.push(ratings);
+          result.push(ratings / 5);
           ratings = 0;
           counter = 0;
-          console.log(result)
+
+          console.log(result);
         }
       });
-   
     });
-    
 
     return this.state.data ? (
       <div>
@@ -63,7 +56,7 @@ export default class Related extends React.Component {
         <Carousel breakPoints={breakPoints}>
           {this.state.data.map((product, index) => {
             return (
-              <Product rates={(result[index])} product={product} key={index} />
+              <Product rate={result[index]} product={product} key={index} />
             );
           })}
         </Carousel>

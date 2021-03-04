@@ -1,13 +1,11 @@
 import React from "react";
 import Carousel from "react-elastic-carousel";
-import axios from "axios";
 import Cardoutfit from "./Cardoutfit.jsx";
 import data from "../data.json";
 
 export default class Myoutfit extends React.Component {
   constructor(props) {
     super(props);
-   
   }
 
   render() {
@@ -21,11 +19,11 @@ export default class Myoutfit extends React.Component {
     return (
       <div>
         <h1>YOUR OUTFIT</h1>
-      <Carousel breakPoints={breakPoints}>
-        {data.map((outfit, index) => {
-          return <Cardoutfit outfit={outfit} key={index}/>
-        })}
-      </Carousel>
+        <Carousel breakPoints={breakPoints}>
+          {data.map((outfit, index) => {
+            return <Cardoutfit outfit={outfit} key={index} />;
+          })}
+        </Carousel>
       </div>
     );
   }
