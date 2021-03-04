@@ -16,7 +16,7 @@ export default class Related extends React.Component {
 
   async componentDidMount() {
     try {
-      const response = await axios.get(`/api/products/11005`);
+      const response = await axios.get(`http://68.183.77.18:3001/related/11005`);
       await this.setState({ data: response.data });
     
     } catch (e) {
@@ -63,7 +63,7 @@ export default class Related extends React.Component {
         <Carousel breakPoints={breakPoints}>
           {this.state.data.map((product, index) => {
             return (
-              <Product rates={(result[index]/5)} product={product} key={index} />
+              <Product rates={(result[index])} product={product} key={index} />
             );
           })}
         </Carousel>

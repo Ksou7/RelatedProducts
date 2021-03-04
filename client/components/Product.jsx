@@ -47,7 +47,7 @@ export default class Product extends Component {
       
         <div>
         <StarRatings
-        rating={(this.props.rate)}
+        rating={(rates/5)}
         starRatedColor="orange"
         starDimension="15px"
         starSpacing="1px"
