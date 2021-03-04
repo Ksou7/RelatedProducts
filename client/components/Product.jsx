@@ -23,43 +23,40 @@ export default class Product extends Component {
     return (
       <div>
       {!this.state.comparison ? (
-                <div></div>
-              ) : (
-                <Modalcomparison comparisonproduct={this.props.product} />
-              )}
-             
-      <div className="card-product">
+        <div></div>
+      ) : (
+        <Modalcomparison comparisonproduct={this.props.product} />
+      )}
+      <div className="card-product" onClick={this.CompClick.bind(this)}>
         <div>
-        <i class="far fa-times-circle size:3x remove" ></i>
-        
+          <span
+            className="far fa-star card-star-top"
+          
+          ></span>
           <img className="card-image" src={this.props.product.url.url}></img>
         </div>
         <div className="card-category">
-          <a> {this.props.product.category}</a>
+          <a>{this.props.product.category}</a>
         </div>
-        <div className="card-title">
-        
-        {this.props.product.name}
+        <div className="card-title">{this.props.product.name}</div>
         <span className="card-price">
-        <br />
-       $  {this.props.product.default_price}
-        <br />
+          ${this.props.product.default_price}
         </span>
-        <span>
+        
+       
+      
+        <div>
         <StarRatings
-        rating={(5)}
+        rating={(this.props.rate)}
         starRatedColor="orange"
         starDimension="15px"
         starSpacing="1px"
         numberOfStars={5}
         name="rating"
       />
-      </span>
-       </div>
-      
       </div>
-      
       </div>
+    </div>
     );
   }
 }

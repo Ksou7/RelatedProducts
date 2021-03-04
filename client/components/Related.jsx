@@ -37,8 +37,8 @@ export default class Related extends React.Component {
     var ratings = 0;
     var counter = 0;
     this.state.data.map((element) => {
-   
       if (element.rating.length === 0) {
+        
         result.push(0);
         ratings = 0;
         counter = 0;
@@ -50,6 +50,7 @@ export default class Related extends React.Component {
           result.push(ratings);
           ratings = 0;
           counter = 0;
+          console.log(result)
         }
       });
    
@@ -62,7 +63,7 @@ export default class Related extends React.Component {
         <Carousel breakPoints={breakPoints}>
           {this.state.data.map((product, index) => {
             return (
-              <Product rates={result[index]} product={product} key={index} />
+              <Product rates={(result[index]/5)} product={product} key={index} />
             );
           })}
         </Carousel>

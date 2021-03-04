@@ -1,7 +1,8 @@
 // const axios = require("axios");
-// var token = process.env.TOKEN;
+
 
 // module.exports.find = async function (req, res) {
+//     console.log("dakhllllllllllllet");
 //   var data = [];
 //   try {
 //     const related = await axios.get(

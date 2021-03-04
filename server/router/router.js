@@ -1,7 +1,7 @@
 // const express = require("express");
-// const router = express.Router();
-// const controller = require("../Controller./controller.js")
+// const Router = express.Router();
+// const controller = require("../Controller/controller.js");
 
+// Router.get("/api/products/:product_id", controller.find);
 
-// // router.get("/api/products/:product_id", controller.find);
-// // module.exports = router;
+// module.exports = Router;
