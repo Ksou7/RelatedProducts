@@ -20,7 +20,7 @@ app.get("/api/products/:product_id", async (req, res) => {
       `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${req.params.product_id}/related`,
       {
         headers: {
-          Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
+          Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
         },
         _id: req.params.product_id,
       }
@@ -33,7 +33,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}`,
             {
               headers: {
-                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
+                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
               },
             }
           )
@@ -47,7 +47,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}/styles`,
             {
               headers: {
-                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
+                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
               },
             }
           )
@@ -63,7 +63,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=${related.data[i]}`,
             {
               headers: {
-                Authorization: "82554f7a5475edcf407e6b0daf89c75e01960767",
+                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
               },
               _id: req.params.product_id,
             }
