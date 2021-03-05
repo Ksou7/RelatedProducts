@@ -9,7 +9,10 @@ const env = require("dotenv").config();
 
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
-
+/**
+ * get request to fetch all the products with details.
+ 
+ */
 app.get("/api/products/:product_id", async (req, res) => {
   var data = [];
   await axios
@@ -17,7 +20,7 @@ app.get("/api/products/:product_id", async (req, res) => {
       `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${req.params.product_id}/related`,
       {
         headers: {
-          Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
+          Authorization: "3873f6f3568f596d81c161236955fad4dc5219ef",
         },
         _id: req.params.product_id,
       }
@@ -30,7 +33,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}`,
             {
               headers: {
-                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
+                Authorization: "3873f6f3568f596d81c161236955fad4dc5219ef",
               },
             }
           )
@@ -44,7 +47,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/products/${related.data[i]}/styles`,
             {
               headers: {
-                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
+                Authorization: "3873f6f3568f596d81c161236955fad4dc5219ef",
               },
             }
           )
@@ -60,7 +63,7 @@ app.get("/api/products/:product_id", async (req, res) => {
             `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/reviews?product_id=${related.data[i]}`,
             {
               headers: {
-                Authorization: "047418cefca4a6cc7e2c9043c08c4c6bfe48ba78",
+                Authorization: "3873f6f3568f596d81c161236955fad4dc5219ef",
               },
               _id: req.params.product_id,
             }

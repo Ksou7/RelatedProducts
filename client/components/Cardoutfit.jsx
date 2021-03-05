@@ -1,5 +1,4 @@
 import React from "react";
-// import Rating from './Rating.jsx'
 import StarRatings from "react-star-ratings";
 
 

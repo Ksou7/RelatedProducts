@@ -1,7 +1,10 @@
 body {
   margin: 50px;
 }
-
+/**
+ * Represents card products.
+ *
+ */
 .card-product {
   border: 1px solid;
   border-color: grey;
@@ -12,16 +15,10 @@ body {
   cursor: pointer;
   margin: 10px;
 }
-
-.card-star-top {
-  position: absolute;
-  margin-top: 15px;
-  margin-left: 230px;
-}
-
-.card-star-top:hover {
-  color: orange;
-}
+/**
+ * Represents image.
+ *
+ */
 
 .card-image {
   max-width: 265px;
@@ -29,20 +26,28 @@ body {
   max-height: 265px;
   min-height: 265px;
 }
-
+/**
+ * Represents a category.
+ */
 .card-category {
   font-size: 14px;
   margin: 8px;
   text-transform: uppercase;
   color: grey;
 }
-
+/**
+ * Represents a title.
+ 
+ */
 .card-title {
   font-size: 20px;
   margin: 8px;
   font-weight: bold;
 }
+/**
+ * Represents a price.
 
+ */
 .card-price {
   font-size: 15px;
   margin: 8px;
@@ -55,6 +60,19 @@ body {
 
 .card-star {
   margin: 1px;
+}
+/**
+ * Represents star card in top right of the card.
+
+ */
+.card-star-top {
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 230px;
+}
+
+.card-star-top:hover {
+  color: orange;
 }
 
 .card-star:hover {
@@ -74,12 +92,15 @@ body {
   color: gray;
 }
 
+/**
+ * Represents a modal comparison.
 
+ */
 .comparison-modal {
   position: fixed;
   right: 20%;
   margin-top: 2%;
-            width: 30%;
+  width: 30%;
   height: 50%;
   overflow: auto;
   background-color:white;

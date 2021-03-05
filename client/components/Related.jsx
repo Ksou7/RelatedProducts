@@ -11,7 +11,10 @@ export default class Related extends React.Component {
       data: [],
     };
   }
+/**
+ * get request for products
 
+ */
   async componentDidMount() {
     try {
       const response = await axios.get("/api/products/11036");
@@ -22,12 +25,19 @@ export default class Related extends React.Component {
   }
 
   render() {
+    /**
+ * Represents carussel.
+ 
+ */
     const breakPoints = [
       { width: 1, itemsToShow: 1 },
       { width: 1, itemsToShow: 2 },
       { width: 1, itemsToShow: 3 },
       { width: 1, itemsToShow: 4 },
     ];
+    /**
+ * this function represented number of rates.
+ */
     var result = [];
     var ratings = 0;
     var counter = 0;

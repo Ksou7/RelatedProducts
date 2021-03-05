@@ -10,7 +10,10 @@ export default class Product extends Component {
       comparison: false,
     };
   }
+/**
+ *Onclick display Modal.
 
+ */
   CompClick() {
     this.setState({
       comparison: true,
