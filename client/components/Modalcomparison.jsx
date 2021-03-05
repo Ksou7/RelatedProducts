@@ -44,9 +44,13 @@ export default class Modalcomparison extends React.Component {
     };
   }
 
+
   render() {
+    console.log(this.props.comparisonproduct.features);
+    
+    
     return (
-      <div className="comparison-modal">
+      <div className="comparison-modal" >
         <table>
           <tr>
             <th>First Product</th>
@@ -59,7 +63,7 @@ export default class Modalcomparison extends React.Component {
             </td>
             <td>Size</td>
             <td>
-              <i class=""></i>
+        
             </td>
           </tr>
           <tr>
@@ -84,13 +88,16 @@ export default class Modalcomparison extends React.Component {
             <td>
               <i class="fa fa-check"></i>
             </td>
-            <td>Feature X</td>
+            <td>Coton</td>
             <td>
               <i class="fa fa-check"></i>
             </td>
           </tr>
           <tr>
-            <td>Feature Y</td>
+            <td>
+              <i class="fa fa-check"></i>
+            </td>
+            <td>Tissu</td>
             <td>
               <i class="fa fa-check"></i>
             </td>
