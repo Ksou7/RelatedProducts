@@ -19,7 +19,7 @@ export default class Product extends Component {
   }
 
   render() {
-    console.log( "==========>" ,this.props.rates);
+    
     return (
       <div>
         {!this.state.comparison ? (
@@ -45,16 +45,16 @@ export default class Product extends Component {
           
          
         
-          <span>
+          <div>
           <StarRatings
-          rating={(this.props.rate)/5}
+          rating={5}
           starRatedColor="orange"
           starDimension="15px"
           starSpacing="1px"
           numberOfStars={5}
           name="rating"
         />
-        </span>
+        </div>
         </div>
       </div>
     );

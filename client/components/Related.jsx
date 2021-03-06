@@ -16,8 +16,8 @@ export default class Related extends React.Component {
 
   async componentDidMount() {
     try {
-      const response = await axios.get(`/api/products/11005`);
-      await this.setState({ data: response.data });
+      const response = await axios.get(`http://165.22.24.57:3001/products/11005`);
+      await this.setState({ data: response.data }, () => {console.log(this.state.data)});
     
     } catch (e) {
       console.log(e);
@@ -58,7 +58,7 @@ export default class Related extends React.Component {
 
     return this.state.data ? (
       <div>
-        <h1>RELATED PRODUCTS</h1>
+       
         <Carousel breakPoints={breakPoints}>
           {this.state.data.map((product, index) => {
             return (
