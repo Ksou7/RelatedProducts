@@ -17,7 +17,7 @@ export default class Related extends React.Component {
  */
   async componentDidMount() {
     try {
-      const response = await axios.get("/api/products/11036");
+      const response = await axios.get("http://165.22.24.57:3001/products/11036");
       await this.setState({ data: response.data });
     } catch (e) {
       console.log(e);

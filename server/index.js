@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, "../public")));
  * get request to fetch all the products with details.
  
  */
-app.get("/api/products/:product_id", async (req, res) => {
+app.get("/products/:product_id", async (req, res) => {
   var data = [];
   await axios
     .get(
